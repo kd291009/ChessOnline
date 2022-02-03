@@ -1,0 +1,84 @@
+﻿@model ChessOnline.Models.PlayerRankingViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-controller="Players" asp-action="Index" method="get">
+    <p>
+        <input type="text" name="Ranking" />
+        Title: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].GamesPlayed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].GamesWon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].GamesLost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].GamesTied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].WinPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].Ranking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].CountryOfOrigin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Players) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GamesPlayed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GamesWon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GamesLost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GamesTied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WinPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ranking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryOfOrigin)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

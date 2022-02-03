@@ -1,0 +1,9 @@
+Table Players
+Id
+Name
+GamesPlayed
+GamesWon
+GamesLost
+GamesTied
+WinPercentage
+Ranking
