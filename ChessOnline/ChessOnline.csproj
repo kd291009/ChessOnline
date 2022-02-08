@@ -8,6 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Register\**" />
+    <Content Remove="Views\Register\**" />
+    <EmbeddedResource Remove="Views\Register\**" />
+    <None Remove="Views\Register\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\LoginController.cs" />
+    <Compile Remove="Controllers\RegisterController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Players\Create.cshtml" />
+    <None Include="Views\Players\Delete.cshtml" />
+    <None Include="Views\Players\Details.cshtml" />
+    <None Include="Views\Players\Edit.cshtml" />
+    <None Include="Views\Players\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

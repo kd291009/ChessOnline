@@ -16,5 +16,7 @@ namespace ChessOnline.Data
         }
 
         public DbSet<ChessOnline.Models.Players> Players { get; set; }
+        public DbSet<ChessOnline.ViewModel.UserInfoViewModel> UserInfo { get; set; }
+
     }
 }

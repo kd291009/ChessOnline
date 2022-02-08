@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ChessOnline.Data;
 using ChessOnline.Models;
+using ChessOnline.ViewModel;
 
 namespace ChessOnline.Controllers
 {
