@@ -8,5 +8,9 @@ namespace ChessOnline.Controllers
         {
             return View();
         }
+
+
+        [HttpPost]
+        public IActionResult SaveRegisterDetails() { return View(); }
     }
 }
