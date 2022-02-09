@@ -7,6 +7,7 @@ using ChessOnline.IdentityPolicy;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IPasswordValidator<UserInfo>, CustomPasswordPolicy>();
+builder.Services.AddTransient<IUserValidator<UserInfo>, CustomUSernameEmailPolicy>();
 builder.Services.AddDbContext<ChessOnlineContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ChessOnlineContext")));
 builder.Services.AddDbContext<IdentityContext>(options =>
