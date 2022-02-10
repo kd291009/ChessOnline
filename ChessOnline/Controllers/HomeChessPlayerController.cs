@@ -1,16 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
+using ChessOnline.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ChessOnline.Controllers
 {
     public class HomeChessPlayerController : Controller
     {
-       /* //Get /HomeChessPlayer/
-        */
-
-        public IActionResult Index()
+        //dependency injection
+        private UserManager<UserInfo> userManager;
+        public HomeChessPlayerController(UserManager<UserInfo> userMgr)
         {
-            return View();
+            userManager = userMgr;
+        }
+        /* //Get /Account/Login
+         * Because of Identity library
+         * Returns to HomeChessPlayer route when authentificated
+         */
+        [Authorize]
+        public async Task<IActionResult> Index()
+        {
+            UserInfo user = await userManager.GetUserAsync(HttpContext.User);
+            string message = "Hello " + user.UserName + " !";
+            return View((object)message);
         }
 
         /*// Get /HomeChess/
