@@ -23,7 +23,7 @@ namespace ChessOnline.Controllers
         public async Task<IActionResult> Index()
         {
             UserInfo user = await userManager.GetUserAsync(HttpContext.User);
-            string message = "Hello " + user.UserName + " !";
+            string message = "Hello " + user.UserName + "!";
             return View((object)message);
         }
 

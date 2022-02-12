@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ChessOnline.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 using ChessOnline.Data;
 
 namespace ChessOnline.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class AdminController : Controller
     {
 
@@ -96,7 +98,13 @@ namespace ChessOnline.Controllers
             return View(userManager.Users);
         }
 
+
+
+
+        [AllowAnonymous]
         public ViewResult Create() => View();
+
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Create([Bind("Name,Email,Password")] User user)
         {
@@ -109,8 +117,9 @@ namespace ChessOnline.Controllers
                 };
                 //CreateAsync(TUSer,string) creates user with given password
                 IdentityResult result = await userManager.CreateAsync(userInfo, user.Password);
+                //if redirect to Index we get authentification error if user is not admin
                 if (result.Succeeded)
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "HomeChessPLayer");
                 else
                 {
                     foreach(IdentityError error in result.Errors)
