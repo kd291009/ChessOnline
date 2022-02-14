@@ -45,7 +45,10 @@ namespace ChessOnline.Controllers
                     await signInManager.SignOutAsync();
                     Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
                     if (result.Succeeded)
-                        return Redirect(login.ReturnUrl ?? "/");
+                    return Redirect(login.ReturnUrl ?? "/");
+
+
+
                 }
                 ModelState.AddModelError(nameof(login.Email),"Login Failed: Invalid Email or password");
             }

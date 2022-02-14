@@ -7,7 +7,7 @@ using ChessOnline.Data;
 
 namespace ChessOnline.Controllers
 {
-    [Authorize(Roles = "Manager")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
 
