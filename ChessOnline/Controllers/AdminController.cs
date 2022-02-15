@@ -39,7 +39,7 @@ namespace ChessOnline.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(string id, string email, string passwordHash)
+        public async Task<IActionResult> Edit(string id, string email, string passwordHash, string country)
         {
             UserInfo user = await userManager.FindByIdAsync(id);
             if (user != null)
@@ -68,6 +68,10 @@ namespace ChessOnline.Controllers
                 }
                 else
                     ModelState.AddModelError("", "Password cannot be empty");
+
+                Country newCountry;
+                Enum.TryParse(country, out newCountry);
+                user.Country = newCountry;
 
                 if (validEmail != null && validPass != null && validEmail.Succeeded && validPass.Succeeded)
                 {
@@ -113,7 +117,9 @@ namespace ChessOnline.Controllers
                 UserInfo userInfo = new UserInfo
                 {
                     UserName = user.Name,
-                    Email = user.Email
+                    Email = user.Email,
+                    Country = user.Country
+                    
                 };
                 //CreateAsync(TUSer,string) creates user with given password
                 IdentityResult result = await userManager.CreateAsync(userInfo, user.Password);

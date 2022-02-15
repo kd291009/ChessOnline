@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
+//ViewModel pour identity userInfo
 namespace ChessOnline.Models
 {
     public class User
@@ -16,5 +17,6 @@ namespace ChessOnline.Models
 
         [Required]
         public string Password { get; set; }
+        public Country Country { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace ChessOnline.ViewModel
 {
     public class PlayerRankingViewModel
     {
-        //PLayers et Rankings sont une liste retournant les resultats
+        //Players et Rankings sont une liste retournant les resultats
         public List<Players>? Players { get; set; }
         public SelectList? Rankings { get; set; }
         //Ranking et SearchString est le nom des field de recherche
