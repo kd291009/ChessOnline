@@ -18,6 +18,7 @@ namespace ChessOnline.TagHelpers
         }
 
         [HtmlAttributeName("i-role")]
+        //Utilise attribut role passé
         public string Role { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

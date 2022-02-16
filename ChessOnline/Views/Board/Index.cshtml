@@ -1,0 +1,27 @@
+﻿@model Board
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Play";
+}
+<link href="@(nameof(ChessOnline)).styles.css" rel="stylesheet" type="text/css" />
+<div class="chessboard">
+@for(var i = 0; i < Model.size; i++) {
+    
+        @for (var j = 0; j < Model.size; j++)
+        {
+            string color = Model.board[i,j].Color.ToString().ToLower();
+            <div class = @color>
+            </div>
+        }
+}
+</div>
+<div class="white">&#9820;</div>
+<div class="black">&#9822;</div>
+<div class="white">&#9821;</div>
+<div class="black">&#9819;</div>
+<div class="white">&#9818;</div>
+<div class="black">&#9821;</div>
+<div class="white">&#9822;</div>
+<div class="black">&#9820;</div>
