@@ -1,5 +1,5 @@
-# Online Chess
-## Online Chess is an a website similar to [Chess.com](chess.com) for online chess playing and game analysis.
+# Chess Online
+## Chess online is an a website similar to [Chess.com](chess.com) for online chess playing and game analysis.
 ### If you click on the Home button and are not authenticated you will redirected to the login page.
 <details><summary>Login</summary>
   
