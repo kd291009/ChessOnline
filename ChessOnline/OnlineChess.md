@@ -15,7 +15,7 @@
   
 </details>
 
-### The admin button shows this page.
+### The Admin button shows this page.
 <details><summary>Admin</summary>
   
 ![Players](https://github.com/kd291009/ChessOnline/blob/master/ChessOnline/Images/Players.png)
@@ -29,14 +29,14 @@
 
 </details>
 
-### You can create a new user if you haven't got an account.
+### The Create User button let's you create a new user.
 <details><summary>Create user</summary>
   
 ![CreateUser](https://github.com/kd291009/ChessOnline/blob/master/ChessOnline/Images/CreateUser.png)
 
   </details>
   
-### This is the empty chess board that appears if you click on the play button on the menu bar.
+### This is the empty chess board that appears if you click on the Play button on the menu bar.
 <details><summary>Empty board</summary>
   
 ![Empty Board](https://github.com/kd291009/ChessOnline/blob/master/ChessOnline/Images/EmptyBoard.png)
