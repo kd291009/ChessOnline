@@ -1,1 +1,1 @@
-﻿![alt text](https://github.com/kd291009/ChessOnline/blob/master/Images/EmptyBoard.png?raw=true)
+﻿![alt text](https://github.com/kd291009/ChessOnline/tree/master/Images/EmptyBoard.png?raw=true)
