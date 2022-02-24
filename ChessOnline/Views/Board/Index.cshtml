@@ -12,16 +12,62 @@
         @for (var j = 0; j < Model.size; j++)
         {
             string color = Model.board[i,j].Color.ToString().ToLower();
-            <div class = @color>
+            <div id=@i,@j class = @color >
             </div>
         }
 }
 </div>
-<div class="white">&#9820;</div>
-<div class="black">&#9822;</div>
-<div class="white">&#9821;</div>
-<div class="black">&#9819;</div>
-<div class="white">&#9818;</div>
-<div class="black">&#9821;</div>
-<div class="white">&#9822;</div>
-<div class="black">&#9820;</div>
+<button onclick="displayPieces()">Play</button>
+<button>Clear Board</button>
+<script>
+    function displayPieces() {
+        @*Black*@
+        @*Pawns*@
+        document.getElementById("1,0").innerHTML = "&#9823;";
+        document.getElementById("1,1").innerHTML = "&#9823;";
+        document.getElementById("1,2").innerHTML = "&#9823;";
+        document.getElementById("3,3").innerHTML = "&#9823;";
+        document.getElementById("3,4").innerHTML = "&#9823;";
+        document.getElementById("1,5").innerHTML = "&#9823;";
+        document.getElementById("1,6").innerHTML = "&#9823;";
+        document.getElementById("1,7").innerHTML = "&#9823;";
+
+        @*Pieces*@
+        document.getElementById("0,0").innerHTML = "&#9820;";
+        document.getElementById("0,7").innerHTML = "&#9820;";
+
+        document.getElementById("0,1").innerHTML = "&#9822";
+        document.getElementById("0,6").innerHTML = "&#9822";
+
+        document.getElementById("0,2").innerHTML = "&#9821;";
+        document.getElementById("0,5").innerHTML = "&#9821;";
+
+        document.getElementById("0,3").innerHTML = "&#9819;";
+        document.getElementById("0,4").innerHTML = "&#9818;";
+
+        @*White*@
+        @*Pawns*@
+        document.getElementById("6,0").innerHTML = "&#9817;";
+        document.getElementById("6,1").innerHTML = "&#9817;";
+        document.getElementById("6,2").innerHTML = "&#9817;";
+        document.getElementById("4,3").innerHTML = "&#9817;";
+        document.getElementById("4,4").innerHTML = "&#9817;";
+        document.getElementById("6,5").innerHTML = "&#9817;";
+        document.getElementById("6,6").innerHTML = "&#9817;";
+        document.getElementById("6,7").innerHTML = "&#9817;";
+
+        @*Pieces*@
+        document.getElementById("7,0").innerHTML = "&#9814;";
+        document.getElementById("7,7").innerHTML = "&#9814;";
+
+        document.getElementById("7,1").innerHTML = "&#9816";
+        document.getElementById("5,5").innerHTML = "&#9816";
+
+        document.getElementById("7,2").innerHTML = "&#9815;";
+        document.getElementById("7,5").innerHTML = "&#9815;";
+
+        document.getElementById("7,3").innerHTML = "&#9813;";
+        document.getElementById("7,4").innerHTML = "&#9812;";
+
+    }
+</script>
