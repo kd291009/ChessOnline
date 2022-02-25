@@ -49,3 +49,7 @@
 ![StartedGame](https://github.com/kd291009/ChessOnline/blob/master/ChessOnline/Images/StartedGame.png)
   
 </details>
+## Futur releases will include
+Online play against other players
+Move backtracking for game analysis
+Move suggestion when playing alone
